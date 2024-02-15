@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvyufyg7q5g3w"]
+
+[ext_resource type="Script" path="res://Characters/Character.cs" id="1_8rgmy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hcehw"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8rfun"]
+size = Vector3(1, 1.5, 1)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_8rgmy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hcehw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8rfun")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 8, 8)

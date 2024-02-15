@@ -1,0 +1,60 @@
+Initial Ideas:
+	Worldwide skills
+		1. Flash
+		2. Heal
+		3. Ghost
+		4. Cleanse
+		5. Smokescreen (AOE Slow) 
+		
+	Main 5 classes:
+		1. Warrior	(Ooga booga sword)
+		2. Bowman	(Typical archer)
+		3. Thief	(Sneaky, Glass cannon assassin shadower + some dots and tiny bit of range)
+		4. Mage		(Typical Mage)
+		5. Pirate	(All-around bruiser, mix of range and melee)
+		
+	General inputs:
+		Passives? 
+		Q - Attack
+		X - Attack
+		E - Attack
+		R - Ultimate
+		C - Cancel casting
+		Left click - Basic attack
+		Right click - Attack
+		D - Worldwide skill
+		F - Worldwide skill
+		Space - Jump? Movement ability? Unsure (Y axis spooky)
+		
+	Directory Structure:
+		Main -
+			|-> Characters
+			|		|->	Warrior
+			|		|-> Bowman
+			|		|-> Thief
+			|		|-> Mage
+			|		|-> Pirate
+			|		|-> Subclasses (Maybe future? Job advancements)
+			|-> Art
+				|-> Characters
+						|-> Warrior
+								|-> Skins
+								|-> Animations
+								|-> Sprites
+								|-> etc
+						|-> Same pattern for rest
+			
+
+For Code:
+	Have a ICharacter interface showing what functionality is expected from all characters
+		Properties everyone should have, this will be defined in constructor:
+			- AD
+			- Movespeed
+			- Attack speed
+			- HP
+			- MP
+			- Eventually: Resistances? Maybe just Defense > Armor/MR since only 1 mage class.
+	Character parent class that contains implementation of interface.
+		Will have a virtual function for QWERDFC implementations. Thinking everything will just be basic attacks be default.
+	Then specifics:
+		Warrior inherits Character, and overrides functionalities in QWERDFC
